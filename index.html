@@ -9,8 +9,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
---gold: #C9A86C;
---gold-light: #E8D5A3;
+--gold: #B88669;
+--gold-light: #D9B99A;
+--gold-dim: #7a5a46;
 --dark: #0E0C0A;
 --charcoal: #1C1915;
 --mid: #2E2A24;
@@ -29,7 +30,6 @@ line-height: 1.7;
 overflow-x: hidden;
 }
 
-/* ── NOISE TEXTURE OVERLAY ── */
 body::before {
 content: '';
 position: fixed;
@@ -50,8 +50,8 @@ align-items: center;
 text-align: center;
 padding: 60px 24px;
 position: relative;
-background: radial-gradient(ellipse 80% 60% at 50% 40%, #2a2016 0%, var(--dark) 70%);
-border-bottom: 1px solid #2a2416;
+background: radial-gradient(ellipse 80% 60% at 50% 40%, #231a12 0%, var(--dark) 70%);
+border-bottom: 1px solid #2a2016;
 }
 
 .cover::after {
@@ -67,7 +67,7 @@ font-size: 10px;
 letter-spacing: 4px;
 text-transform: uppercase;
 color: var(--gold);
-border: 1px solid #3a2e1a;
+border: 1px solid #3a2a1e;
 padding: 8px 20px;
 margin-bottom: 48px;
 animation: fadeUp 0.8s ease both;
@@ -83,10 +83,7 @@ color: var(--cream);
 animation: fadeUp 0.9s 0.1s ease both;
 }
 
-.cover-brand em {
-font-style: italic;
-color: var(--gold);
-}
+.cover-brand em { font-style: italic; color: var(--gold); }
 
 .cover-sub {
 margin-top: 20px;
@@ -175,10 +172,10 @@ background: linear-gradient(90deg, transparent, #2e2a24, transparent);
 margin: 0;
 }
 
-/* ── PROBLEM BOX ── */
+/* ── INSIGHT BOX ── */
 .insight-box {
 background: linear-gradient(135deg, #1e1a14 0%, #17130e 100%);
-border: 1px solid #2e2818;
+border: 1px solid #2e2010;
 border-left: 3px solid var(--gold);
 padding: 32px 36px;
 margin: 36px 0;
@@ -189,7 +186,7 @@ color: var(--gold-light);
 line-height: 1.5;
 }
 
-/* ── FEATURE GRID ── */
+/* ── FEATURES ── */
 .features {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -223,7 +220,7 @@ transition: transform 0.4s ease;
 font-family: 'Cormorant Garamond', serif;
 font-size: 40px;
 font-weight: 300;
-color: #2a2416;
+color: #2a1e14;
 line-height: 1;
 margin-bottom: 12px;
 }
@@ -312,7 +309,7 @@ transition: border-color 0.3s;
 
 .price-card.featured {
 border-color: var(--gold);
-background: #1a1610;
+background: #1a1208;
 }
 
 .price-card.featured::before {
@@ -394,7 +391,7 @@ margin: 40px 0;
 @media (max-width: 520px) { .why-grid { grid-template-columns: 1fr; } }
 
 .why-item {
-border-left: 1px solid #2a2416;
+border-left: 1px solid #3a2418;
 padding-left: 20px;
 }
 
@@ -413,10 +410,396 @@ color: #6a6050;
 margin: 0;
 }
 
+/* ══════════════════════════════════
+   ── WHAT HAPPENS AFTER YOU SAY YES ──
+══════════════════════════════════ */
+.after-yes-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 0;
+margin: 48px 0;
+border: 1px solid #221a12;
+position: relative;
+}
+
+.after-yes-grid::before {
+content: '';
+position: absolute;
+top: 50%; left: 0; right: 0;
+height: 1px;
+background: linear-gradient(90deg, transparent, #2a1e14, transparent);
+pointer-events: none;
+}
+
+.ay-step {
+background: #11100d;
+padding: 32px 24px;
+border-right: 1px solid #221a12;
+position: relative;
+transition: background 0.3s;
+}
+
+.ay-step:last-child { border-right: none; }
+.ay-step:hover { background: #1a1510; }
+
+.ay-step-num {
+font-family: 'Cormorant Garamond', serif;
+font-size: 52px;
+font-weight: 300;
+color: var(--gold);
+opacity: 0.18;
+line-height: 1;
+margin-bottom: 10px;
+}
+
+.ay-step-icon {
+font-size: 22px;
+margin-bottom: 12px;
+display: block;
+}
+
+.ay-step-title {
+font-size: 11px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(--gold);
+margin-bottom: 8px;
+font-weight: 500;
+}
+
+.ay-step-text {
+font-size: 12px;
+color: #6a6050;
+line-height: 1.6;
+margin: 0;
+}
+
+/* ══════════════════════════════════
+   ── PROGRESS CHECKLIST ──
+══════════════════════════════════ */
+.checklist-wrap {
+margin: 48px 0;
+display: flex;
+flex-direction: column;
+gap: 0;
+}
+
+.cl-item {
+display: flex;
+align-items: flex-start;
+gap: 24px;
+padding: 22px 28px;
+border: 1px solid #1e1612;
+border-bottom: none;
+position: relative;
+transition: background 0.3s;
+background: #100e0b;
+}
+
+.cl-item:first-child { border-radius: 0; }
+.cl-item:last-child { border-bottom: 1px solid #1e1612; }
+.cl-item:hover { background: #1a1510; }
+
+.cl-item::before {
+content: '';
+position: absolute;
+left: 0; top: 0; bottom: 0;
+width: 3px;
+background: transparent;
+transition: background 0.3s;
+}
+
+.cl-item:hover::before { background: var(--gold); }
+
+.cl-check {
+width: 28px;
+height: 28px;
+border: 1px solid var(--gold);
+flex-shrink: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 2px;
+position: relative;
+transform: rotate(45deg);
+}
+
+.cl-check.done {
+background: var(--gold);
+}
+
+.cl-check .inner {
+transform: rotate(-45deg);
+font-size: 12px;
+color: var(--dark);
+font-weight: 700;
+line-height: 1;
+}
+
+.cl-check.empty .inner {
+transform: rotate(-45deg);
+width: 8px;
+height: 8px;
+background: transparent;
+}
+
+.cl-body { flex: 1; }
+
+.cl-title {
+font-size: 13px;
+letter-spacing: 1px;
+text-transform: uppercase;
+color: var(--cream);
+font-weight: 500;
+margin-bottom: 4px;
+}
+
+.cl-desc {
+font-size: 12px;
+color: #6a6050;
+margin: 0;
+}
+
+.cl-tag {
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(--gold);
+background: #1e1410;
+border: 1px solid #3a2418;
+padding: 3px 10px;
+align-self: center;
+white-space: nowrap;
+flex-shrink: 0;
+}
+
+/* ══════════════════════════════════
+   ── PAYMENT TERMS ──
+══════════════════════════════════ */
+.payment-row {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2px;
+margin: 40px 0;
+}
+
+@media (max-width: 600px) { .payment-row { grid-template-columns: 1fr; } }
+
+.payment-card {
+background: #11100d;
+border: 1px solid #221a12;
+padding: 32px 24px;
+text-align: center;
+position: relative;
+}
+
+.payment-card::after {
+content: '';
+position: absolute;
+bottom: 0; left: 20%; right: 20%;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(--gold), transparent);
+opacity: 0;
+transition: opacity 0.3s;
+}
+
+.payment-card:hover::after { opacity: 1; }
+
+.payment-pct {
+font-family: 'Cormorant Garamond', serif;
+font-size: 56px;
+font-weight: 300;
+color: var(--gold);
+line-height: 1;
+}
+
+.payment-pct span {
+font-size: 28px;
+vertical-align: top;
+margin-top: 10px;
+display: inline-block;
+}
+
+.payment-label {
+font-size: 10px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(--text-muted);
+margin: 10px 0 14px;
+}
+
+.payment-desc {
+font-size: 12px;
+color: #5a5040;
+line-height: 1.6;
+}
+
+.payment-note {
+background: #1a1208;
+border: 1px solid #3a2418;
+border-left: 3px solid var(--gold);
+padding: 20px 28px;
+margin-top: 24px;
+font-size: 13px;
+color: #8a7860;
+line-height: 1.6;
+}
+
+.payment-note strong { color: var(--gold-light); font-weight: 400; }
+
+/* ══════════════════════════════════
+   ── GUARANTEE ──
+══════════════════════════════════ */
+.guarantee-box {
+background: linear-gradient(145deg, #1a1208 0%, #0e0c0a 100%);
+border: 1px solid #3a2418;
+padding: 56px 48px;
+margin: 40px 0;
+position: relative;
+text-align: center;
+}
+
+.guarantee-box::before {
+content: '';
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.guarantee-box::after {
+content: '';
+position: absolute;
+bottom: 0; left: 0; right: 0;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.guarantee-seal {
+width: 80px;
+height: 80px;
+border: 1px solid var(--gold);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 32px;
+position: relative;
+}
+
+.guarantee-seal::before {
+content: '';
+position: absolute;
+inset: 5px;
+border: 1px solid #3a2418;
+border-radius: 50%;
+}
+
+.guarantee-seal-icon {
+font-size: 30px;
+position: relative;
+z-index: 1;
+}
+
+.guarantee-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: clamp(24px, 4vw, 36px);
+font-weight: 300;
+color: var(--cream);
+margin-bottom: 16px;
+}
+
+.guarantee-title em { color: var(--gold); font-style: italic; }
+
+.guarantee-text {
+font-size: 14px;
+color: #8a7860;
+max-width: 560px;
+margin: 0 auto 32px;
+}
+
+.guarantee-pills {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+justify-content: center;
+}
+
+.g-pill {
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+border: 1px solid #3a2418;
+color: var(--gold);
+padding: 6px 16px;
+background: #1a1208;
+}
+
+/* ══════════════════════════════════
+   ── FAQ ──
+══════════════════════════════════ */
+.faq-list {
+margin: 40px 0;
+display: flex;
+flex-direction: column;
+gap: 2px;
+}
+
+.faq-item {
+background: #11100d;
+border: 1px solid #1e1612;
+overflow: hidden;
+}
+
+.faq-q {
+padding: 22px 28px;
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 16px;
+font-size: 13px;
+letter-spacing: 0.5px;
+color: var(--cream);
+font-weight: 400;
+user-select: none;
+transition: background 0.2s;
+}
+
+.faq-q:hover { background: #1a1510; }
+
+.faq-q .faq-icon {
+font-family: 'Cormorant Garamond', serif;
+font-size: 22px;
+color: var(--gold);
+flex-shrink: 0;
+transition: transform 0.3s ease;
+line-height: 1;
+}
+
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+.faq-a {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.4s ease, padding 0.3s ease;
+font-size: 13px;
+color: #6a6050;
+padding: 0 28px;
+border-top: 0px solid transparent;
+transition: max-height 0.4s ease, padding 0.3s ease, border-top 0.3s;
+}
+
+.faq-item.open .faq-a {
+max-height: 300px;
+padding: 20px 28px 24px;
+border-top: 1px solid #1e1612;
+}
+
 /* ── CTA ── */
 .cta-section {
-background: linear-gradient(135deg, #1e1a12, #0e0c0a);
-border: 1px solid #2a2416;
+background: linear-gradient(135deg, #1e1208, #0e0c0a);
+border: 1px solid #2a1e14;
 border-top: 2px solid var(--gold);
 padding: 64px 40px;
 text-align: center;
@@ -474,12 +857,11 @@ footer {
 text-align: center;
 padding: 24px;
 font-size: 11px;
-color: #3a3428;
+color: #3a3020;
 letter-spacing: 2px;
-border-top: 1px solid #1a1610;
+border-top: 1px solid #1a1208;
 }
 
-/* ── ANIMATIONS ── */
 @keyframes fadeUp {
 from { opacity: 0; transform: translateY(24px); }
 to { opacity: 1; transform: translateY(0); }
@@ -490,216 +872,456 @@ to { opacity: 1; transform: translateY(0); }
 
 <!-- ══════════ COVER ══════════ -->
 <div class="cover">
-<div class="badge">Website Proposal · April 2026</div>
-<div class="cover-brand">Zariya<br><em>Designer Wear</em></div>
-<div class="cover-sub">A Digital Presence Worthy of Your Label</div>
-<div class="cover-divider"></div>
-<div class="cover-tagline">"Bringing the elegance of Zariya to every screen — beautifully, strategically, and completely."</div>
-<div class="cover-meta">Prepared by Hitin Banga &nbsp;|&nbsp; +230 58451482</div>
+  <div class="badge">Website Proposal · April 2026</div>
+  <div class="cover-brand">Zariya<br><em>Designer Wear</em></div>
+  <div class="cover-sub">A Digital Presence Worthy of Your Label</div>
+  <div class="cover-divider"></div>
+  <div class="cover-tagline">"Bringing the elegance of Zariya to every screen — beautifully, strategically, and completely."</div>
+  <div class="cover-meta">Prepared by Hitin Banga &nbsp;|&nbsp; +230 58451482</div>
 </div>
 
 <!-- ══════════ INTRO ══════════ -->
 <section>
-<div class="section-label">Introduction</div>
-<h2>I Know <em>Zariya.</em><br>That's Why I'm Here.</h2>
-<p>
-Having worked closely with the team at Zariya Designer Wear, I've seen firsthand the quality of the collections, the care in customer experience, and the passion behind the brand. From exquisite women's fancy Abayas to elegant men's Islamic wear — Zariya is not just clothing, it's a statement of faith, culture, and style, right here in Mauritius.
-</p>
-<p>
-I also know that a website is currently in progress. But here's the truth: <strong>most websites built for fashion brands miss the mark.</strong> They're built by developers, not by people who understand how the brand feels, how customers shop, or what actually drives sales online.
-</p>
-<div class="insight-box">
-"I'm not just a developer. I'm someone who understands Zariya — and I want to build a website that represents it the way it deserves."
-</div>
-<p>
-This proposal outlines exactly what I'll deliver, how I'll do it, and why partnering with me is the smarter, faster, and more personal choice.
-</p>
+  <div class="section-label">Introduction</div>
+  <h2>I Know <em>Zariya.</em><br>That's Why I'm Here.</h2>
+  <p>Having worked closely with the team at Zariya Designer Wear, I've seen firsthand the quality of the collections, the care in customer experience, and the passion behind the brand. From exquisite women's fancy Abayas to elegant men's Islamic wear — Zariya is not just clothing, it's a statement of faith, culture, and style, right here in Mauritius.</p>
+  <p>I also know that a website is currently in progress. But here's the truth: <strong>most websites built for fashion brands miss the mark.</strong> They're built by developers, not by people who understand how the brand feels, how customers shop, or what actually drives sales online.</p>
+  <div class="insight-box">"I'm not just a developer. I'm someone who understands Zariya — and I want to build a website that represents it the way it deserves."</div>
+  <p>This proposal outlines exactly what I'll deliver, how I'll do it, and why partnering with me is the smarter, faster, and more personal choice.</p>
 </section>
 <hr class="fancy">
 
-<!-- ══════════ PROBLEM ══════════ -->
+<!-- ══════════ OPPORTUNITY ══════════ -->
 <section>
-<div class="section-label">The Opportunity</div>
-<h2>What a Great Website<br>Does for <em>You</em></h2>
-<p>In today's market, your website is your most powerful salesperson. It works 24/7, reaches customers across Pakistan and internationally, and communicates your brand's premium value before a single word is spoken.</p>
-<p>Right now, customers may be searching for Zariya online and finding nothing — or finding your social media alone, which isn't built to convert browsers into buyers. A polished, fast, and beautiful website changes all of that.</p>
+  <div class="section-label">The Opportunity</div>
+  <h2>What a Great Website<br>Does for <em>You</em></h2>
+  <p>In today's market, your website is your most powerful salesperson. It works 24/7, reaches customers across Mauritius and internationally, and communicates your brand's premium value before a single word is spoken.</p>
+  <p>Right now, customers may be searching for Zariya online and finding nothing — or finding your social media alone, which isn't built to convert browsers into buyers. A polished, fast, and beautiful website changes all of that.</p>
 </section>
 <hr class="fancy">
 
 <!-- ══════════ FEATURES ══════════ -->
 <section>
-<div class="section-label">What I'll Build</div>
-<h2>A Complete <em>Digital Experience</em></h2>
-<p>Every element crafted specifically for a designer clothing brand — not a generic template.</p>
+  <div class="section-label">What I'll Build</div>
+  <h2>A Complete <em>Digital Experience</em></h2>
+  <p>Every element crafted specifically for a designer clothing brand — not a generic template.</p>
+  <div class="features">
+    <div class="feature">
+      <div class="feature-num">01</div>
+      <div class="feature-title">Luxury Homepage</div>
+      <p class="feature-desc">A stunning first impression — full-screen visuals, elegant typography, and smooth animations that reflect the Zariya aesthetic.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-num">02</div>
+      <div class="feature-title">Collections Gallery</div>
+      <p class="feature-desc">Beautiful lookbook-style pages for each collection — with filters, high-res image display, and category navigation.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-num">03</div>
+      <div class="feature-title">Online Shop</div>
+      <p class="feature-desc">Full e-commerce with product listings, sizes, order placement, and easy WhatsApp or checkout integration.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-num">04</div>
+      <div class="feature-title">Mobile-First Design</div>
+      <p class="feature-desc">Over 80% of fashion shoppers browse on phones. Your site will look and perform flawlessly on every device.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-num">05</div>
+      <div class="feature-title">Brand Story Page</div>
+      <p class="feature-desc">About Us, the vision behind Zariya, the designers — told in a way that builds trust and emotional connection.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-num">06</div>
+      <div class="feature-title">Contact & Booking</div>
+      <p class="feature-desc">Easy inquiry forms, WhatsApp chat button, store location, and custom order request flows.</p>
+    </div>
+  </div>
+</section>
+<hr class="fancy">
 
-<div class="features">
-<div class="feature">
-<div class="feature-num">01</div>
-<div class="feature-title">Luxury Homepage</div>
-<p class="feature-desc">A stunning first impression — full-screen visuals, elegant typography, and smooth animations that reflect the Zariya aesthetic.</p>
-</div>
-<div class="feature">
-<div class="feature-num">02</div>
-<div class="feature-title">Collections Gallery</div>
-<p class="feature-desc">Beautiful lookbook-style pages for each collection — with filters, high-res image display, and category navigation.</p>
-</div>
-<div class="feature">
-<div class="feature-num">03</div>
-<div class="feature-title">Online Shop</div>
-<p class="feature-desc">Full e-commerce with product listings, sizes, order placement, and easy WhatsApp or checkout integration.</p>
-</div>
-<div class="feature">
-<div class="feature-num">04</div>
-<div class="feature-title">Mobile-First Design</div>
-<p class="feature-desc">Over 80% of fashion shoppers browse on phones. Your site will look and perform flawlessly on every device.</p>
-</div>
-<div class="feature">
-<div class="feature-num">05</div>
-<div class="feature-title">Brand Story Page</div>
-<p class="feature-desc">About Us, the vision behind Zariya, the designers — told in a way that builds trust and emotional connection.</p>
-</div>
-<div class="feature">
-<div class="feature-num">06</div>
-<div class="feature-title">Contact & Booking</div>
-<p class="feature-desc">Easy inquiry forms, WhatsApp chat button, store location, and custom order request flows.</p>
-</div>
-</div>
+<!-- ══════════ WHAT HAPPENS AFTER YOU SAY YES ══════════ -->
+<section>
+  <div class="section-label">After You Say Yes</div>
+  <h2>What Happens <em>Next</em></h2>
+  <p>The moment you decide to move forward, things start happening fast. Here's exactly what the first 48 hours look like — and beyond.</p>
+
+  <div class="after-yes-grid">
+    <div class="ay-step">
+      <div class="ay-step-num">01</div>
+      <span class="ay-step-icon">🤝</span>
+      <div class="ay-step-title">Agreement Signed</div>
+      <p class="ay-step-text">We sign a simple one-page agreement outlining the scope, timeline, and pricing. No legal jargon — just clarity.</p>
+    </div>
+    <div class="ay-step">
+      <div class="ay-step-num">02</div>
+      <span class="ay-step-icon">💳</span>
+      <div class="ay-step-title">Initial Payment</div>
+      <p class="ay-step-text">50% advance to begin. Fully secured. You'll receive a receipt and official invoice on the same day.</p>
+    </div>
+    <div class="ay-step">
+      <div class="ay-step-num">03</div>
+      <span class="ay-step-icon">📋</span>
+      <div class="ay-step-title">Brand Briefing</div>
+      <p class="ay-step-text">A focused session to gather your photos, fonts, colors, and any references you love. Takes 30–60 minutes.</p>
+    </div>
+    <div class="ay-step">
+      <div class="ay-step-num">04</div>
+      <span class="ay-step-icon">🎨</span>
+      <div class="ay-step-title">Design Concept</div>
+      <p class="ay-step-text">Within 3 days, you'll see the first visual concept for approval — before a single line of code is written.</p>
+    </div>
+    <div class="ay-step">
+      <div class="ay-step-num">05</div>
+      <span class="ay-step-icon">🚀</span>
+      <div class="ay-step-title">Build & Launch</div>
+      <p class="ay-step-text">Development begins, with regular check-ins. You'll see the live site within 4 weeks — and we go live together.</p>
+    </div>
+  </div>
 </section>
 <hr class="fancy">
 
 <!-- ══════════ TIMELINE ══════════ -->
 <section>
-<div class="section-label">Process</div>
-<h2>How We'll Get <em>There</em></h2>
+  <div class="section-label">Process</div>
+  <h2>How We'll Get <em>There</em></h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-phase">Week 1</div>
+      <div class="tl-title">Discovery & Design</div>
+      <p class="tl-desc">I gather brand assets, understand your vision, and present a design concept for your approval before building anything.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-phase">Week 2–3</div>
+      <div class="tl-title">Development</div>
+      <p class="tl-desc">Full website build — homepage, collections, shop, contact pages. Regular updates shared with you throughout.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-phase">Week 4</div>
+      <div class="tl-title">Review & Refinement</div>
+      <p class="tl-desc">You review everything. We refine, polish, and make sure every detail is perfect before going live.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-phase">Launch</div>
+      <div class="tl-title">Go Live + Handover</div>
+      <p class="tl-desc">Website launches. I provide full training so your team can manage products and content independently.</p>
+    </div>
+  </div>
+</section>
+<hr class="fancy">
 
-<div class="timeline">
-<div class="tl-item">
-<div class="tl-dot"></div>
-<div class="tl-phase">Week 1</div>
-<div class="tl-title">Discovery & Design</div>
-<p class="tl-desc">I gather brand assets, understand your vision, and present a design concept for your approval before building anything.</p>
-</div>
-<div class="tl-item">
-<div class="tl-dot"></div>
-<div class="tl-phase">Week 2–3</div>
-<div class="tl-title">Development</div>
-<p class="tl-desc">Full website build — homepage, collections, shop, contact pages. Regular updates shared with you throughout.</p>
-</div>
-<div class="tl-item">
-<div class="tl-dot"></div>
-<div class="tl-phase">Week 4</div>
-<div class="tl-title">Review & Refinement</div>
-<p class="tl-desc">You review everything. We refine, polish, and make sure every detail is perfect before going live.</p>
-</div>
-<div class="tl-item">
-<div class="tl-dot"></div>
-<div class="tl-phase">Launch</div>
-<div class="tl-title">Go Live + Handover</div>
-<p class="tl-desc">Website launches. I provide full training so your team can manage products and content independently.</p>
-</div>
-</div>
+<!-- ══════════ PROJECT CHECKLIST ══════════ -->
+<section>
+  <div class="section-label">Project Checklist</div>
+  <h2>Everything <em>Included</em> — Nothing Hidden</h2>
+  <p>Every deliverable is tracked and handed over. This is your checklist — you'll see each item completed and signed off before launch.</p>
+
+  <div class="checklist-wrap">
+    <div class="cl-item">
+      <div class="cl-check done"><span class="inner">✓</span></div>
+      <div class="cl-body">
+        <div class="cl-title">Brand Discovery Session</div>
+        <p class="cl-desc">Understanding your aesthetic, target audience, and goals before any design begins.</p>
+      </div>
+      <div class="cl-tag">Week 1</div>
+    </div>
+    <div class="cl-item">
+      <div class="cl-check done"><span class="inner">✓</span></div>
+      <div class="cl-body">
+        <div class="cl-title">Design Concept Approval</div>
+        <p class="cl-desc">Visual mockup of the homepage presented before any code is written. Your approval required to proceed.</p>
+      </div>
+      <div class="cl-tag">Week 1</div>
+    </div>
+    <div class="cl-item">
+      <div class="cl-check empty"><span class="inner"></span></div>
+      <div class="cl-body">
+        <div class="cl-title">Luxury Homepage Built</div>
+        <p class="cl-desc">Full-screen hero, featured collections, brand statement, and smooth scroll animations.</p>
+      </div>
+      <div class="cl-tag">Week 2</div>
+    </div>
+    <div class="cl-item">
+      <div class="cl-check empty"><span class="inner"></span></div>
+      <div class="cl-body">
+        <div class="cl-title">Collections & Shop Pages</div>
+        <p class="cl-desc">Product listings with categories, filtering, and individual product detail views.</p>
+      </div>
+      <div class="cl-tag">Week 2–3</div>
+    </div>
+    <div class="cl-item">
+      <div class="cl-check empty"><span class="inner"></span></div>
+      <div class="cl-body">
+        <div class="cl-title">Mobile Optimization</div>
+        <p class="cl-desc">Full QA testing across all screen sizes — phones, tablets, and desktops.</p>
+      </div>
+      <div class="cl-tag">Week 3</div>
+    </div>
+    <div class="cl-item">
+      <div class="cl-check empty"><span class="inner"></span></div>
+      <div class="cl-body">
+        <div class="cl-title">SEO & Speed Setup</div>
+        <p class="cl-desc">Page titles, meta descriptions, image optimization, and Google indexing configured.</p>
+      </div>
+      <div class="cl-tag">Week 3</div>
+    </div>
+    <div class="cl-item">
+      <div class="cl-check empty"><span class="inner"></span></div>
+      <div class="cl-body">
+        <div class="cl-title">Your Review & Final Revisions</div>
+        <p class="cl-desc">You test everything on your own devices. All requested changes made before launch.</p>
+      </div>
+      <div class="cl-tag">Week 4</div>
+    </div>
+    <div class="cl-item">
+      <div class="cl-check empty"><span class="inner"></span></div>
+      <div class="cl-body">
+        <div class="cl-title">Live Launch + Team Training</div>
+        <p class="cl-desc">Website goes live. Full walkthrough so your team can manage content independently.</p>
+      </div>
+      <div class="cl-tag">Launch</div>
+    </div>
+  </div>
 </section>
 <hr class="fancy">
 
 <!-- ══════════ PRICING ══════════ -->
 <section>
-<div class="section-label">Investment</div>
-<h2>Transparent <em>Pricing</em></h2>
-<p>Choose the package that fits where Zariya is today — with room to grow.</p>
+  <div class="section-label">Investment</div>
+  <h2>Transparent <em>Pricing</em></h2>
+  <p>Choose the package that fits where Zariya is today — with room to grow.</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-tier">Starter</div>
+      <div class="price-amount"><span class="price-currency">Rs</span> 25K</div>
+      <div class="price-period">One-time</div>
+      <ul class="price-features">
+        <li>5-page informational website</li>
+        <li>Mobile responsive design</li>
+        <li>WhatsApp inquiry integration</li>
+        <li>Collections gallery</li>
+        <li>Contact page</li>
+        <li>1 month support</li>
+      </ul>
+    </div>
+    <div class="price-card featured">
+      <div class="price-tier">Professional</div>
+      <div class="price-amount"><span class="price-currency">Rs</span> 37K</div>
+      <div class="price-period">One-time</div>
+      <ul class="price-features">
+        <li>Full e-commerce store</li>
+        <li>Luxury custom design</li>
+        <li>Product management panel</li>
+        <li>Order & inquiry system</li>
+        <li>Instagram feed integration</li>
+        <li>SEO setup</li>
+        <li>3 months support</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <div class="price-tier">Premium</div>
+      <div class="price-amount"><span class="price-currency">Rs</span> 60K</div>
+      <div class="price-period">One-time</div>
+      <ul class="price-features">
+        <li>Everything in Professional</li>
+        <li>Custom animations & lookbook</li>
+        <li>Online payment integration</li>
+        <li>Customer accounts & wishlist</li>
+        <li>Email marketing setup</li>
+        <li>Analytics dashboard</li>
+        <li>6 months support</li>
+      </ul>
+    </div>
+  </div>
+  <p style="font-size:12px; color: #4a3828; text-align:center; margin-top: 16px;">All prices in Mauritian Rupees (MUR). Includes domain & hosting guidance. Prices negotiable for long-term partnership.</p>
+</section>
+<hr class="fancy">
 
-<div class="pricing-grid">
-<div class="price-card">
-<div class="price-tier">Starter</div>
-<div class="price-amount"><span class="price-currency">Rs</span> 25K</div>
-<div class="price-period">One-time</div>
-<ul class="price-features">
-<li>5-page informational website</li>
-<li>Mobile responsive design</li>
-<li>WhatsApp inquiry integration</li>
-<li>Collections gallery</li>
-<li>Contact page</li>
-<li>1 month support</li>
-</ul>
-</div>
+<!-- ══════════ PAYMENT TERMS ══════════ -->
+<section>
+  <div class="section-label">Payment Terms</div>
+  <h2>Simple, <em>Fair</em> Payment Structure</h2>
+  <p>Designed so you never pay everything upfront — and I never deliver without commitment on both sides.</p>
 
-<div class="price-card featured">
-<div class="price-tier">Professional</div>
-<div class="price-amount"><span class="price-currency">Rs</span> 37K</div>
-<div class="price-period">One-time</div>
-<ul class="price-features">
-<li>Full e-commerce store</li>
-<li>Luxury custom design</li>
-<li>Product management panel</li>
-<li>Order & inquiry system</li>
-<li>Instagram feed integration</li>
-<li>SEO setup</li>
-<li>3 months support</li>
-</ul>
-</div>
+  <div class="payment-row">
+    <div class="payment-card">
+      <div class="payment-pct">50<span>%</span></div>
+      <div class="payment-label">To Begin</div>
+      <p class="payment-desc">Paid upfront to confirm the project and reserve your slot. Design work starts immediately after receipt.</p>
+    </div>
+    <div class="payment-card" style="border-color: var(--gold);">
+      <div class="payment-pct" style="color: var(--gold-light);">25<span>%</span></div>
+      <div class="payment-label">At Midpoint</div>
+      <p class="payment-desc">Due when the design concept is approved and development is underway. Marks the halfway milestone.</p>
+    </div>
+    <div class="payment-card">
+      <div class="payment-pct">25<span>%</span></div>
+      <div class="payment-label">On Launch</div>
+      <p class="payment-desc">Final payment when the website goes live and you're fully satisfied. Not before — guaranteed.</p>
+    </div>
+  </div>
 
-<div class="price-card">
-<div class="price-tier">Premium</div>
-<div class="price-amount"><span class="price-currency">Rs</span> 60K</div>
-<div class="price-period">One-time</div>
-<ul class="price-features">
-<li>Everything in Professional</li>
-<li>Custom animations & lookbook</li>
-<li>Online payment integration</li>
-<li>Customer accounts & wishlist</li>
-<li>Email marketing setup</li>
-<li>Analytics dashboard</li>
-<li>6 months support</li>
-</ul>
-</div>
-</div>
-<p style="font-size:12px; color: #4a4035; text-align:center; margin-top: 16px;">All prices in Mauritian Rupees (MUR). Includes domain & hosting guidance. Prices negotiable for long-term partnership.</p>
+  <div class="payment-note">
+    <strong>Accepted:</strong> Bank transfer, mobile money, or cash. A formal receipt is issued for every payment. If you prefer a different split, I'm open to discussing — just ask.
+  </div>
+</section>
+<hr class="fancy">
+
+<!-- ══════════ GUARANTEE ══════════ -->
+<section>
+  <div class="section-label">Our Guarantee</div>
+  <h2>You Are <em>Protected</em></h2>
+
+  <div class="guarantee-box">
+    <div class="guarantee-seal">
+      <span class="guarantee-seal-icon">⬡</span>
+    </div>
+    <div class="guarantee-title">The <em>Zariya Promise</em></div>
+    <p class="guarantee-text">
+      I don't consider this project done until you are genuinely proud of what we've built together. If something isn't right, we fix it — no questions asked, no extra charges. Your satisfaction is built into every step of the process.
+    </p>
+    <div class="guarantee-pills">
+      <div class="g-pill">Unlimited Revisions During Review</div>
+      <div class="g-pill">No Hidden Fees — Ever</div>
+      <div class="g-pill">Final Payment Only After Approval</div>
+      <div class="g-pill">30-Day Post-Launch Bug Support</div>
+      <div class="g-pill">Full Ownership Handed to You</div>
+      <div class="g-pill">Training Included at No Extra Cost</div>
+    </div>
+  </div>
 </section>
 <hr class="fancy">
 
 <!-- ══════════ WHY ME ══════════ -->
 <section>
-<div class="section-label">Why Choose Me</div>
-<h2>The <em>Advantage</em> of Choosing Someone<br>Who Already Understands You</h2>
+  <div class="section-label">Why Choose Me</div>
+  <h2>The <em>Advantage</em> of Choosing Someone<br>Who Already Understands You</h2>
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-item-title">I Know the Brand</div>
+      <p class="why-item-text">I've worked with Zariya. I understand the clientele, the aesthetic, and what matters to your customers — no onboarding gap.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-item-title">Fashion-Focused</div>
+      <p class="why-item-text">I'm not building a generic business site. Every decision — fonts, colors, layout — will be made with a designer wear brand in mind.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-item-title">Direct Communication</div>
+      <p class="why-item-text">No middlemen, no agency delays. You talk to me directly and I deliver — fast revisions, real accountability.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-item-title">Long-Term Partner</div>
+      <p class="why-item-text">After launch, I stay available. New collections, seasonal updates, promotions — I grow with your brand.</p>
+    </div>
+  </div>
+</section>
+<hr class="fancy">
 
-<div class="why-grid">
-<div class="why-item">
-<div class="why-item-title">I Know the Brand</div>
-<p class="why-item-text">I've worked with Zariya. I understand the clientele, the aesthetic, and what matters to your customers — no onboarding gap.</p>
-</div>
-<div class="why-item">
-<div class="why-item-title">Fashion-Focused</div>
-<p class="why-item-text">I'm not building a generic business site. Every decision — fonts, colors, layout — will be made with a designer wear brand in mind.</p>
-</div>
-<div class="why-item">
-<div class="why-item-title">Direct Communication</div>
-<p class="why-item-text">No middlemen, no agency delays. You talk to me directly and I deliver — fast revisions, real accountability.</p>
-</div>
-<div class="why-item">
-<div class="why-item-title">Long-Term Partner</div>
-<p class="why-item-text">After launch, I stay available. New collections, seasonal updates, promotions — I grow with your brand.</p>
-</div>
-</div>
+<!-- ══════════ FAQ ══════════ -->
+<section>
+  <div class="section-label">FAQ</div>
+  <h2>Questions You're<br>Probably <em>Thinking</em></h2>
+  <p>Honest answers to everything you'd want to know before saying yes.</p>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        How long will the website actually take?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        For most packages, the full website is ready within 4 weeks. The timeline depends on how quickly we receive brand assets (photos, logos, content) from your side. The faster we get materials, the faster we deliver. I'll always give you a realistic date — not an optimistic one.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        What if I don't have professional photos yet?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        No problem. We can use high-quality placeholder imagery during development and swap in your real photos when they're ready. I can also recommend a local photographer in Mauritius who specialises in fashion and product shoots if needed.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Can I update the website myself after it's built?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        Yes — 100%. I'll build with a user-friendly content management system and provide full training so your team can add products, update prices, and manage content independently. You'll never be dependent on me for day-to-day changes.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        What about hosting and domain? Are those included?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        Domain and hosting are not included in the package price, but I'll guide you through choosing and setting them up — it's typically Rs 3,000–6,000/year depending on your needs. I'll handle the technical setup so you don't have to worry about anything.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        What if I already have a website being built elsewhere?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        I understand — and I'm not here to pressure you. But I'd encourage you to compare: are they building something specifically for a fashion brand, or a generic site? If you'd like a second opinion on what you've been shown so far, I'm happy to review it and give you an honest assessment. No cost.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        How many revisions do I get?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        During the dedicated review week (Week 4), revisions are unlimited. You can request as many changes as needed — colour tweaks, text edits, layout adjustments — until you're fully satisfied. After launch, minor changes are covered for 30 days at no charge.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        What if I want to add features later — like a loyalty programme or blog?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        The website is built to grow. Adding new features, pages, or integrations after launch is straightforward and will be quoted separately at a fair rate. Many of my clients start with the Professional package and expand once they see results.
+      </div>
+    </div>
+  </div>
 </section>
 <hr class="fancy">
 
 <!-- ══════════ CTA ══════════ -->
 <div class="cta-section">
-<div class="section-label" style="justify-content:center;">Next Step</div>
-<h2>Let's Build Something<br><em>Extraordinary</em></h2>
-<p style="max-width:480px; margin: 0 auto;">I'd love to sit down with you, show you some design concepts, and talk through what the ideal website for Zariya looks like. No commitment — just a conversation.</p>
+  <div class="section-label" style="justify-content:center;">Next Step</div>
+  <h2>Let's Build Something<br><em>Extraordinary</em></h2>
+  <p style="max-width:480px; margin: 0 auto;">I'd love to sit down with you, show you some design concepts, and talk through what the ideal website for Zariya looks like. No commitment — just a conversation.</p>
 
-<ul class="contact-list">
-<li><strong>Name:</strong> Hitin Banga</li>
-<li><strong>Phone / WhatsApp:</strong> +230 58451482</li>
-<li><strong>Email:</strong> hitin.banga23@gmail.com</li>
-</ul>
+  <ul class="contact-list">
+    <li><strong>Name:</strong> Hitin Banga</li>
+    <li><strong>Phone / WhatsApp:</strong> +230 58451482</li>
+    <li><strong>Email:</strong> hitin.banga23@gmail.com</li>
+  </ul>
 
-<div class="sign-off">"Zariya deserves a digital home as beautiful as the pieces it creates."</div>
+  <div class="sign-off">"Zariya deserves a digital home as beautiful as the pieces it creates."</div>
 </div>
 
 <footer>
-ZARIYA DESIGNER WEAR &nbsp;·&nbsp; WEBSITE PROPOSAL &nbsp;·&nbsp; 2026
+  ZARIYA DESIGNER WEAR &nbsp;·&nbsp; WEBSITE PROPOSAL &nbsp;·&nbsp; 2026
 </footer>
 
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
 </body>
-</html
+</html>
